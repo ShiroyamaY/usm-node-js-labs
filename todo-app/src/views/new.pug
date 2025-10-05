@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 Новая задача
+
+  if typeof error !== 'undefined'
+    p.error= error
+
+  form(method="post" action="/new")
+    input(type="text" name="title" placeholder="Что нужно сделать?" required value=(typeof value !== 'undefined' ? value : ''))
+    button(type="submit") Добавить

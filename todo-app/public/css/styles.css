@@ -1,0 +1,13 @@
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;margin:0;background:#f7f7f7;color:#222}
+header,footer{background:#fff;border-bottom:1px solid #e5e5e5}
+header nav,main,footer{max-width:800px;margin:0 auto;padding:16px}
+nav a{margin-right:8px;text-decoration:none;color:#0366d6}
+main{min-height:70vh}
+ul.todo-list{list-style:none;padding:0}
+.todo-list li{display:flex;align-items:center;gap:8px;background:#fff;margin:8px 0;padding:8px;border:1px solid #e5e5e5;border-radius:6px}
+.todo-list li.done span{text-decoration:line-through;color:#777}
+button{cursor:pointer;border:1px solid #ccc;background:#fafafa;border-radius:4px;padding:4px 8px}
+button.danger{border-color:#e5534b;color:#e5534b;background:#fff}
+input[type=text]{padding:8px;border:1px solid #ccc;border-radius:4px;width:60%}
+form{display:inline}
+.error{color:#e5534b}

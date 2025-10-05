@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1 Список задач
+
+  form(method="get" action="/")
+    label(for="status") Фильтр:
+    select(name="status" id="status" onchange="this.form.submit()")
+      option(value="all" selected=status === 'all') Все
+      option(value="active" selected=status === 'active') Активные
+      option(value="completed" selected=status === 'completed') Выполненные
+
+  if todos.length
+    ul.todo-list
+      each t in todos
+        li(class=t.completed ? 'done' : '')
+          form(method="post" action=`/${t.id}/toggle`)
+            button(type="submit") #{t.completed ? '↩' : '✓'}
+          span= t.title
+          form(method="post" action=`/${t.id}/delete`)
+            button(type="submit" class="danger") ×
+    a(href="/new") Создать задачу
+  else
+    p Нет задач.
+    a(href="/new") Создать задачу
